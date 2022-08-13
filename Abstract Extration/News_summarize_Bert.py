@@ -1,15 +1,8 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Dec 26 21:34:30 2020
-
-@author: 41291
-"""
-
 import pymongo
 import numpy as np
 import re
 from bson import ObjectId
-
 
 np.seterr(all='warn')
 MONGO_DB_NAME = 'finance_data'  #数据库名称
@@ -28,7 +21,6 @@ def cut_sentences(sentence):    #划分句子并去除引号
     para=re.sub('’', '', para)
     para=re.sub('([。！？])', r"\1\n", para)
     return para  
-
 
 def summarizeText():       #摘要提取
     from summarizer import Summarizer
